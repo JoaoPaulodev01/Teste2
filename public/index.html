@@ -19,7 +19,7 @@
       <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
       <a-light type="directional" color="#fff" intensity="0.8" position="5 10 5"></a-light>
 
-      <!-- Chão invisível para garantir referência de colisão -->
+      <!-- Chão invisível -->
       <a-plane 
         position="0 0 0" 
         rotation="-90 0 0" 
@@ -29,20 +29,21 @@
         static-body
       ></a-plane>
 
-      <!-- Modelo 3D da casa, centralizado -->
+      <!-- Modelo da casa -->
       <a-gltf-model 
         src="/equiped_house.glb" 
         position="0 -4 0" 
         scale="5 5 5"
       ></a-gltf-model>
 
-      <!-- Câmera com rig ajustado para o centro da casa -->
-      <a-entity id="rig" position="0 1.6 0" rotation="0 180 0">
+      <!-- Câmera com fix de altura para VR -->
+      <a-entity id="rig" position="0 0 0" rotation="0 180 0">
         <a-entity 
           camera 
+          user-height="0" 
+          position="0 1.6 0" 
           look-controls 
-          wasd-controls 
-          wasd-controls-enabled="true" 
+          wasd-controls
         ></a-entity>
       </a-entity>
 

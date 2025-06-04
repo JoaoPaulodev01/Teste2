@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Galeria de Vidros VR (Finalizada)</title>
+    <meta charset="utf-8" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/n5ro/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #333" fog="type: linear; color: #222; near: 1; far: 30" physics="gravity: -9.8">
+      <a-sky color="#444"></a-sky>
+      <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
+      <a-light type="directional" color="#fff" intensity="0.8" position="5 10 5"></a-light>
+
+      <a-gltf-model src="equiped_house.glb" position="-16 -4 -8" scale="5 5 5"></a-gltf-model>
+
+
+      <a-entity camera look-controls wasd-controls position="0 1.6 -4" rotation="0 180 0" dynamic-body></a-entity>
+    </a-scene>
+  </body>
+</html>

@@ -12,24 +12,33 @@
       fog="type: linear; color: #222; near: 1; far: 100" 
       physics="gravity: -9.8"
     >
-      <a-sky color="#444"></a-sky>
 
-      <!-- Iluminação -->
+      <!-- Céu e iluminação -->
+      <a-sky color="#444"></a-sky>
       <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
       <a-light type="directional" color="#fff" intensity="0.8" position="5 10 5"></a-light>
 
-      <!-- Modelo 3D de vidro -->
+      <!-- Chão invisível para física funcionar em VR -->
+      <a-plane 
+        position="0 0 0" 
+        rotation="-90 0 0" 
+        width="100" 
+        height="100" 
+        visible="false" 
+        static-body
+      ></a-plane>
+
+      <!-- Modelo 3D centralizado -->
       <a-gltf-model 
-        src="equiped_house.glb" 
-        position="-16 -4 -25" 
+        src="/equiped_house.glb" 
+        position="0 -4 0" 
         scale="5 5 5"
       ></a-gltf-model>
 
-<a-entity id="rig" position="0 1.6 -20" rotation="0 180 0">
-  <a-entity camera look-controls wasd-controls wasd-controls-enabled="true"></a-entity>
-</a-entity>
-
-
+      <!-- Câmera com rig para manter posição no VR -->
+      <a-entity id="rig" position="0 1.6 0" rotation="0 180 0">
+        <a-entity camera look-controls wasd-controls></a-entity>
+      </a-entity>
 
     </a-scene>
   </body>

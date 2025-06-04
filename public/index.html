@@ -26,14 +26,8 @@
       ></a-gltf-model>
 
       <!-- Câmera com controle de movimento -->
-      <a-entity 
-        camera 
-        look-controls 
-        wasd-controls 
-        position="0 1.6 -20" 
-        rotation="0 180 0" 
-        dynamic-body
-      ></a-entity>
+            <a-entity id="rig" position="0 1.6 -20" rotation="0 180 0">
+  <a-entity camera look-controls wasd-controls wasd-controls-enabled="true"></a-entity>
     </a-scene>
   </body>
 </html>
